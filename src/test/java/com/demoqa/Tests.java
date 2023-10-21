@@ -13,7 +13,7 @@ public class Tests extends BaseTests {
     @DisplayName("Проверка различных функций на сайте demoqa.com для параметров")
     @ParameterizedTest(name = "{displayName}: {arguments}")
     @MethodSource("helpers.DataProvider#providerParameters")
-        public void testMarket(String name, String email, String address1, String address2){
+    public void testMarket(String name, String email, String address1, String address2){
         MainPage mainPage = new MainPage(chromeDriver);
         mainPage.testMainMethod(Properties.testsProperties.demoqaComUrl(), chromeDriver, name, email, address1, address2);
     }
