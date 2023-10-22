@@ -22,34 +22,8 @@ public class TextBoxPage {
      */
     private WebDriver chromeDriver;
 
-    /**
-     * Переменная класса явного ожидания
-     * @author Алексей Фадеев
-     */
-    private WebDriverWait wait;
-
-    /**
-     * Переменная класса явного ожидания
-     * @author Алексей Фадеев
-     */
-    private Actions action;
-
-    /**
-     * Переменная главного окна при переключении вкладок
-     * @author Алексей Фадеев
-     */
-    private String mainWindow;
-
-    /**
-     * Переменная класса всплывающего алерта
-     * @author Алексей Фадеев
-     */
-    private Alert alert;
-
     public TextBoxPage(WebDriver chromeDriver){
         this.chromeDriver = chromeDriver;
-        this.wait = new WebDriverWait(chromeDriver, 60);
-        this.action = new Actions(chromeDriver);
     }
     @Step("3.Нажать на «Text box»")
     public void pushTextBox(){
