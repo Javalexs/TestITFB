@@ -126,8 +126,7 @@ public class MainPage {
 
         step("14.Нажать на «Alerts, Frame &amp; Windows»", () -> {
             WebElement element = chromeDriver.findElement(By.xpath("//div[text() = 'Interactions']/ancestor::div[@class = 'element-group']"));
-            Actions actions = new Actions(chromeDriver);
-            actions.moveToElement(element).build().perform();
+            action.moveToElement(element).build().perform();
             chromeDriver.findElement(By.xpath("//div[text() = 'Alerts, Frame & Windows']/ancestor::div[@class = 'element-group']")).click();
         });
 
