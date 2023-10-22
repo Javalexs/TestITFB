@@ -28,8 +28,6 @@ public class MainPage {
         this.chromeDriver = chromeDriver;
     }
 
-
-
     @Step("1.Перейти на сайт: {url}")
     public void openSite(String url) {
         chromeDriver.get(url);
@@ -38,11 +36,4 @@ public class MainPage {
     public void pushElements(){
         chromeDriver.findElement(By.xpath("//h5[text() = 'Elements']")).click();
     }
-
-
-
-
-
-
-
 }
