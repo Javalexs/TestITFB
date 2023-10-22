@@ -6,8 +6,7 @@ import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import pages.MainPage;
-import pages.ToolsPage;
+import pages.*;
 
 public class Tests extends BaseTests {
     /**
@@ -22,35 +21,38 @@ public class Tests extends BaseTests {
         MainPage mainPage = new MainPage(chromeDriver);
         mainPage.openSite(Properties.testsProperties.demoqaComUrl());
         mainPage.pushElements();
-        ToolsPage toolsPage = new ToolsPage(chromeDriver);
-        toolsPage.pushTextBox();
-        toolsPage.inputData(name, email, address1, address2);
-        toolsPage.pushSubmit();
-        toolsPage.checkData(name, email, address1, address2);
-        toolsPage.pushButtons();
-        toolsPage.pushClickMe();
-        toolsPage.checkDynamicClick();
-        toolsPage.pushRightClickMe();
-        toolsPage.checkRightClick();
-        toolsPage.pushDoubleClickMe();
-        toolsPage.checkDoubleClick();
-        toolsPage.pushAlertsFrameWindows();
-        toolsPage.pushBrowserWindows();
-        toolsPage.pushNewTab();
-        toolsPage.closeNewTab();
-        toolsPage.pushNewWindow();
-        toolsPage.closeNewWindow();
-        toolsPage.pushAlerts();
-        toolsPage.pushClickMeAlert();
-        toolsPage.closeAlert();
-        toolsPage.pushClickMeAlertClock();
-        toolsPage.closeAlertClock();
-        toolsPage.pushClickConfirm();
-        toolsPage.pushOk();
-        toolsPage.checkSelectedOk();
-        toolsPage.pushClickPrompt();
-        toolsPage.enterTextTestName();
-        toolsPage.checkTextTestName();
+        TextBoxPage textBoxPage = new TextBoxPage(chromeDriver);
+        textBoxPage.pushTextBox();
+        textBoxPage.inputData(name, email, address1, address2);
+        textBoxPage.pushSubmit();
+        textBoxPage.checkData(name, email, address1, address2);
+        ButtonsPage buttonsPage = new ButtonsPage(chromeDriver);
+        buttonsPage.pushButtons();
+        buttonsPage.pushClickMe();
+        buttonsPage.checkDynamicClick();
+        buttonsPage.pushRightClickMe();
+        buttonsPage.checkRightClick();
+        buttonsPage.pushDoubleClickMe();
+        buttonsPage.checkDoubleClick();
+        WindowsPage windowsPage = new WindowsPage(chromeDriver);
+        windowsPage.pushAlertsFrameWindows();
+        windowsPage.pushBrowserWindows();
+        windowsPage.pushNewTab();
+        windowsPage.closeNewTab();
+        windowsPage.pushNewWindow();
+        windowsPage.closeNewWindow();
+        AlertsPage alertsPage = new AlertsPage(chromeDriver);
+        alertsPage.pushAlerts();
+        alertsPage.pushClickMeAlert();
+        alertsPage.closeAlert();
+        alertsPage.pushClickMeAlertClock();
+        alertsPage.closeAlertClock();
+        alertsPage.pushClickConfirm();
+        alertsPage.pushOk();
+        alertsPage.checkSelectedOk();
+        alertsPage.pushClickPrompt();
+        alertsPage.enterTextTestName();
+        alertsPage.checkTextTestName();
 
     }
 }
