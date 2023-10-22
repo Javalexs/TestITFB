@@ -14,7 +14,7 @@ public class BaseTests {
      * @author Алексей Фадеев
      */
     @BeforeEach
-    public void before(){
+    public void openTest(){
         System.setProperty("webdriver.chrome.driver",System.getenv("CHROME_DRIVER"));
         chromeDriver = new ChromeDriver();
         chromeDriver.manage().window().maximize();
@@ -26,7 +26,7 @@ public class BaseTests {
      * @author Алексей Фадеев
      */
     @AfterEach
-    public void closeMarketTest(){
+    public void closeTest(){
         chromeDriver.quit();
     }
 }
